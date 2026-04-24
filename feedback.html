@@ -11,6 +11,9 @@
 </head> 
 
 <body> 
+  <!-- navigation-->
+     <header> 
+      <nav>
     <header> 
       <nav>
     <div>
@@ -29,7 +32,7 @@
       </li>
 
         <li>
-        <a>Services</a>
+       <a href="#">Services</a>
      <ul>
         <li><a href="Services/rodent.html">Rodent Control</a></li>
       <li><a href="Services/Flying.html">Flying Pests</a></li>
@@ -61,6 +64,7 @@
 </nav>
     </header>
     <main>
+      <!--Feedback and Review-->
           <section class="Feedback">
       <div>
         <h1>Feedback</h1>
@@ -80,17 +84,20 @@
 
       <input type="text" placeholder="Subject" required>
 
-      <
       <fieldset>
-        <legend>Rate Your Experience</legend>
+  <legend>Rate Your Experience</legend>
 
-        <label><input type="radio" name="rating" value="1"> ★</label>
-        <label><input type="radio" name="rating" value="2"> ★★</label>
-        <label><input type="radio" name="rating" value="3" required> ★★★</label>
-        <label><input type="radio" name="rating" value="4"> ★★★★</label>
-        <label><input type="radio" name="rating" value="5"> ★★★★★</label>
+  <label for="rating">Select Rating:</label>
+  <select name="rating" id="rating" required>
+    <option value="">--Choose Rating--</option>
+    <option value="1">★</option>
+    <option value="2">★★</option>
+    <option value="3">★★★</option>
+    <option value="4">★★★★</option>
+    <option value="5">★★★★★</option>
+  </select>
 
-      </fieldset>
+</fieldset>
 
       <textarea placeholder="Message" rows="5" required></textarea>
       <button type="submit" class="btn-primary">Send Message</button>
@@ -118,6 +125,9 @@
 
     </section>
     </main>
+
+    <!--footer-->
+     <footer class="site-footer">
     <footer class="site-footer">
     <div class="footer-brand">
         <strong>MPN HOLDINGS</strong> 
