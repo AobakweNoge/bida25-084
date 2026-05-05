@@ -1,0 +1,786 @@
+/* ============================================================
+   MPN HOLDINGS — style.css
+   Targets: index.html (Home) & about.html (About)
+   ============================================================ */
+
+/* ----------------------------------------------------------
+   1. CSS CUSTOM PROPERTIES
+   ---------------------------------------------------------- */
+:root {
+  --clr-primary:     #1a6b3a;
+  --clr-primary-dk:  #104526;
+  --clr-primary-lt:  #e8f5ee;
+  --clr-accent:      #f5a623;
+  --clr-dark:        #104526;
+  --clr-text:        #2e2e2e;
+  --clr-text-muted:  #5f6b62;
+  --clr-bg:          #ffffff;
+  --clr-bg-alt:      #f4f8f5;
+  --clr-border:      #cce0d4;
+
+  --font-heading: Georgia, 'Times New Roman', serif;
+  --font-body:    'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+
+  /* Spacing in px — fixed layout values */
+  --space-xs:  8px;
+  --space-sm:  16px;
+  --space-md:  32px;
+  --space-lg:  64px;
+
+  --max-w:     1200px;
+  --nav-h:     70px;
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+
+  --shadow-sm: 0 2px 10px rgba(0,0,0,0.07);
+  --shadow-md: 0 6px 24px rgba(0,0,0,0.13);
+  --shadow-lg: 0 16px 48px rgba(0,0,0,0.16);
+}
+
+/* ----------------------------------------------------------
+   2. RESET & BASE
+   ---------------------------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--clr-text);
+  background: var(--clr-bg);
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+ul  { list-style: none; }
+
+a   { color: inherit; text-decoration: none; }
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  line-height: 1.25;
+  color: var(--clr-dark);
+}
+
+h1 { font-size: 48px; }
+h2 { font-size: 32px; }
+h3 { font-size: 20px; }
+
+/* ----------------------------------------------------------
+   3. NAVIGATION
+   ---------------------------------------------------------- */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--clr-bg);
+  border-bottom: 1px solid var(--clr-border);
+  box-shadow: var(--shadow-sm);
+}
+
+header nav {
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+}
+
+/* Flatten the three nested divs */
+header nav > div,
+header nav > div > div,
+header nav > div > div > div {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+header nav > div {
+  max-width: var(--max-w);
+  margin-inline: auto;
+  padding-inline: var(--space-md);
+}
+
+header nav > div > div > div {
+  justify-content: space-between;
+}
+
+/* Logo */
+header nav a img {
+  height: 46px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Hamburger button */
+header nav button[type="button"] {
+  display: none;
+  background: none;
+  border: 2px solid var(--clr-primary);
+  border-radius: var(--radius-sm);
+  padding: 5px 10px;
+  cursor: pointer;
+  color: var(--clr-primary);
+  font-size: 19px;
+  line-height: 1;
+}
+
+/* Nav wrapper */
+#navbarNav {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#navbarNav > ul {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+#navbarNav > ul > li {
+  position: relative;
+}
+
+#navbarNav > ul > li > a {
+  display: block;
+  padding: 7px 13px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+  transition: color 0.2s, background 0.2s;
+}
+
+#navbarNav > ul > li > a:hover {
+  color: var(--clr-primary);
+  background: var(--clr-primary-lt);
+}
+
+/* Services dropdown */
+#navbarNav > ul > li > ul {
+  display:none;
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  background: var(--clr-bg);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  min-width: 175px;
+  padding: 6px 0;
+  z-index: 200;
+}
+
+#navbarNav > ul > li:hover > ul {
+  display: block;
+}
+
+#navbarNav > ul > li > ul > li > a {
+  display: block;
+  padding: 8px 18px;
+  font-size: 14px;
+  transition: background 0.15s, color 0.15s;
+}
+
+#navbarNav > ul > li > ul > li > a:hover {
+  background: var(--clr-primary-lt);
+  color: var(--clr-primary);
+}
+
+/* ----------------------------------------------------------
+   4. BUTTONS
+   ---------------------------------------------------------- */
+a.btn-primary {
+  display: inline-block;
+  padding: 12px 28px;
+  background: var(--clr-primary);
+  color: #fff;
+  font-weight: 700;
+  font-size: 15px;
+  border-radius: var(--radius-sm);
+  border: 2px solid var(--clr-primary);
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+}
+
+a.btn-primary:hover {
+  background: var(--clr-primary-dk);
+  border-color: var(--clr-primary-dk);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+a.btn-secondary {
+  display: inline-block;
+  padding: 12px 28px;
+  background: transparent;
+  color: var(--clr-primary);
+  font-weight: 700;
+  font-size: 15px;
+  border-radius: var(--radius-sm);
+  border: 2px solid var(--clr-primary);
+  transition: background 0.2s, color 0.2s, transform 0.15s;
+}
+
+a.btn-secondary:hover {
+  background: var(--clr-primary);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* ============================================================
+   HOME PAGE  (index.html)
+   ============================================================ */
+
+/* ----------------------------------------------------------
+   5. section.intro — hero text block (floats left 50%)
+   ---------------------------------------------------------- */
+main > section.intro {
+  float: left;
+  width: 50%;
+  min-height: 540px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: var(--space-lg) var(--space-md);
+  padding-left: max(var(--space-md), calc((100vw - var(--max-w)) / 2 + var(--space-md)));
+  background: var(--clr-bg);
+}
+
+section.intro h1 {
+  color: var(--clr-dark);
+  margin-bottom: 8px;
+}
+
+section.intro p {
+  color: var(--clr-text-muted);
+  font-size: 16px;
+  max-width: 440px;
+  margin-bottom: 16px;
+}
+
+section.intro a {
+  margin-right: 8px;
+  margin-bottom: 8px;
+}
+
+/* Hero image — <figure> immediately after section.intro */
+main > section.intro + figure {
+  float: grid;
+  width: 50%;
+  min-height: auto;
+  margin: 0;
+  overflow: hidden;
+}
+
+main > section.intro + figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ----------------------------------------------------------
+   6. div.Pests — "Targeted Pest Solutions"
+   ---------------------------------------------------------- */
+div.Pests {
+  clear: both;
+  background: var(--clr-bg-alt);
+  padding: 64px 32px;
+  text-align: center;
+}
+
+h2.pest-title {
+  color: var(--clr-primary);
+  margin-bottom: 32px;
+}
+
+ul.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  max-width: var(--max-w);
+  margin-inline: auto;
+  text-align: left;
+}
+
+ul.services-grid > li {
+  background: var(--clr-bg);
+  border: 1px solid var(--clr-border);
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+ul.services-grid > li:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+ul.services-grid > li h3 {
+  color: var(--clr-primary);
+  margin-bottom: 8px;
+}
+
+ul.services-grid > li p {
+  color: var(--clr-text-muted);
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
+/* ----------------------------------------------------------
+   7. div.why-us-content + figure
+   Two-column: reasons left | photo right
+   ---------------------------------------------------------- */
+div.why-us-content {
+  float: left;
+  width: 50%;
+  min-height: 440px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 64px 32px;
+  padding-left: max(32px, calc((100vw - var(--max-w)) / 2 + 32px));
+  background: var(--clr-bg);
+}
+
+div.why-us-content h2 {
+  color: var(--clr-primary);
+  margin-bottom: 32px;
+}
+
+div.why-us-content > ul {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 500px;
+}
+
+div.why-us-content > ul > li {
+  background: var(--clr-primary-lt);
+  border-left: 4px solid var(--clr-primary);
+  border-radius: 0 6px 6px 0;
+  padding: 16px 24px;
+}
+
+div.why-us-content > ul > li strong {
+  display: block;
+  color: var(--clr-primary-dk);
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+div.why-us-content > ul > li p {
+  color: var(--clr-text-muted);
+  font-size: 14px;
+}
+
+/* Why-us photo */
+div.why-us-content + figure {
+  float: right;
+  width: 50%;
+  min-height: 440px;
+  margin: 0;
+  overflow: hidden;
+}
+
+div.why-us-content + figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+/* ============================================================
+   ABOUT PAGE  (about.html)
+   ============================================================ */
+
+/* ----------------------------------------------------------
+   8. section.About — hero
+   ---------------------------------------------------------- */
+section.About {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 64px;
+  max-width: var(--max-w);
+  margin-inline: auto;
+  padding: 64px 32px;
+}
+
+section.About h2 {
+  color: var(--clr-primary);
+  margin-bottom: 16px;
+  font-size: 42px;
+}
+
+section.About > p {
+  color: var(--clr-text-muted);
+  font-size: 16px;
+}
+
+section.About figure {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+section.About figure img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ----------------------------------------------------------
+   9. div[class="Company brief"]
+   ---------------------------------------------------------- */
+div[class="Company brief"] {
+  background: var(--clr-primary-lt);
+  border-left: 6px solid var(--clr-primary);
+  padding: 64px 32px;
+  max-width: var(--max-w);
+  margin-inline: auto;
+  border-radius: 0 12px 12px 0;
+}
+
+div[class="Company brief"] p {
+  color: var(--clr-text);
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+/* ----------------------------------------------------------
+   10. article[class="who we are"] — 3 feature cards
+   ---------------------------------------------------------- */
+article[class="who we are"] {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  max-width: var(--max-w);
+  margin-inline: auto;
+  padding: 64px 32px;
+  background: var(--clr-bg-alt);
+}
+
+article[class="who we are"] > li {
+  background: var(--clr-bg);
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s, box-shadow 0.2s;
+  list-style: none;
+}
+
+article[class="who we are"] > li:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+article[class="who we are"] h3 {
+  color: var(--clr-primary);
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--clr-primary-lt);
+}
+
+article[class="who we are"] p {
+  color: var(--clr-text-muted);
+  font-size: 15px;
+}
+
+/* ----------------------------------------------------------
+   11. section[class="core values"] — values cards
+   ---------------------------------------------------------- */
+section[class="core values"] {
+  padding: 64px 32px;
+  background: var(--clr-bg);
+}
+
+section[class="core values"] > h2 {
+  color: var(--clr-primary);
+  text-align: center;
+  margin-bottom: 48px;
+  max-width: var(--max-w);
+  margin-inline: auto;
+}
+
+section[class="core values"] div.values {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  max-width: var(--max-w);
+  margin-inline: auto;
+}
+
+section[class="core values"] article {
+  background: var(--clr-bg-alt);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+
+section[class="core values"] article:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+section[class="core values"] article h3 {
+  color: var(--clr-primary);
+  padding: 16px 16px 8px;
+}
+
+section[class="core values"] article p {
+  color: var(--clr-text-muted);
+  font-size: 15px;
+  padding: 0 16px 16px;
+  line-height: 1.65;
+  flex: 1;
+}
+
+section[class="core values"] article figure {
+  height: 200px;
+  overflow: hidden;
+  margin: 0;
+}
+
+section[class="core values"] article figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+section[class="core values"] article:hover figure img {
+  transform: scale(1.04);
+}
+
+/* ============================================================
+   FOOTER  (shared — both pages)
+   ============================================================ */
+footer.site-footer {
+  clear: both;
+  background: var(--clr-dark);
+  color: #bbb;
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 32px 64px;
+  padding: 64px max(32px, calc((100vw - var(--max-w)) / 2 + 32px));
+}
+
+div.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+div.footer-brand strong {
+  color: #fff;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+img.footer-logo {
+  height: 52px;
+  width: auto;
+  filter: brightness(0) invert(1) opacity(0.8);
+}
+
+ul.social-links {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+ul.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  font-size: 15px;
+  transition: background 0.2s, transform 0.2s;
+}
+
+ul.social-links a:hover {
+  background: var(--clr-primary);
+  transform: translateY(-2px);
+}
+
+nav.footer-links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+nav.footer-links h3 {
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+nav.footer-links ul {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+nav.footer-links a {
+  color: #999;
+  font-size: 14px;
+  transition: color 0.2s;
+}
+
+nav.footer-links a:hover {
+  color: var(--clr-accent);
+}
+
+footer.site-footer > p {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: 13px;
+  color: #666;
+  border-top: 1px solid #333;
+  padding-top: 16px;
+}
+
+/* ============================================================
+   RESPONSIVE — TABLET  (≤ 900px)
+   ============================================================ */
+@media (max-width: 900px) {
+
+  h1 { font-size: 36px; }
+  h2 { font-size: 26px; }
+
+  #navbarNav > ul { gap: 0; }
+  #navbarNav > ul > li > a { font-size: 13px; padding: 6px 9px; }
+
+  /* Home hero */
+  main > section.intro,
+  main > section.intro + figure {
+    float: none;
+    width: 100%;
+    min-height: auto;
+    padding-left: 32px;
+  }
+
+  main > section.intro + figure { height: 300px; }
+
+  /* Services */
+  ul.services-grid { grid-template-columns: 1fr; }
+
+  /* Why us */
+  div.why-us-content,
+  div.why-us-content + figure {
+    float: none;
+    width: 100%;
+    min-height: auto;
+    padding-left: 32px;
+  }
+
+  div.why-us-content + figure { height: 280px; }
+
+  /* About */
+  section.About {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 48px 24px;
+  }
+
+  article[class="who we are"] { grid-template-columns: 1fr; }
+
+  section[class="core values"] div.values { grid-template-columns: 1fr; }
+
+  /* Footer */
+  footer.site-footer {
+    grid-template-columns: 1fr;
+    padding: 48px 24px;
+    gap: 32px;
+  }
+
+  nav.footer-links { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ============================================================
+   RESPONSIVE — MOBILE  (≤ 600px)
+   ============================================================ */
+@media (max-width: 600px) {
+
+  h1 { font-size: 28px; }
+  h2 { font-size: 22px; }
+  h3 { font-size: 18px; }
+
+  header nav button[type="button"] { display: block; }
+
+  #navbarNav {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: var(--clr-bg);
+    border-top: 1px solid var(--clr-border);
+    box-shadow: var(--shadow-md);
+    padding: 8px 0;
+    z-index: 200;
+    display: none;
+    justify-content: flex-start;
+  }
+
+  #navbarNav.open { display: flex; }
+
+  #navbarNav > ul {
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
+  }
+
+  #navbarNav > ul > li > a {
+    padding: 12px 24px;
+    border-radius: 0;
+    font-size: 15px;
+    border-bottom: 1px solid var(--clr-border);
+  }
+
+  #navbarNav > ul > li > ul {
+    position: static;
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    background: var(--clr-primary-lt);
+    padding-left: 24px;
+  }
+
+  section.intro a {
+    display: block;
+    width: max-content;
+    margin-right: 0;
+    margin-bottom: 8px;
+  }
+
+  nav.footer-links { grid-template-columns: 1fr 1fr; }
+}
+
+/* ============================================================
+   MOBILE NAV TOGGLE
+   Add this script before </body> in each HTML file:
+
+   <script>
+     document.querySelector('header nav button[type="button"]')
+       .addEventListener('click', function () {
+         document.getElementById('navbarNav').classList.toggle('open');
+       });
+   </script>
+   ============================================================ */
