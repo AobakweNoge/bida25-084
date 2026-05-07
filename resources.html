@@ -8,110 +8,124 @@
     <title>MPN Holdings</title> 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head> 
 
 <body> 
     <!-- navigation-->
-    <header> 
-      <nav>
-        <div id="navbarNav">
-   <a href="index.html"><img src="Images/Logo.png" alt="MPN Holdings logo" /></a>
-     <button type="button">  </button>
-        
-        <ul>
-      <li>
-        <a href="index.html">Home</a>
-     </li>
+      <header>
 
-        <li>
-      <a href="about.html">About</a>
-      </li>
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+  <div class="container">
 
-        <li>
-        <a href="#">Services</a>
-     <ul>
-        <li><a href="Services/rodent.html">Rodent Control</a></li>
-      <li><a href="Services/Flying.html">Flying Pests</a></li>
-       <li><a href="Services/crawling.html">Crawling Pests</a></li>
-     </ul>
-      </li>
+    <a class="navbar-brand" href="index.html">
+      <img src="Images/Logo.png" style="width:90px;">
+    </a>
 
-            <li>
-     <a href="booking.html">Booking</a>
-      </li>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-     <li>
-      <a href="resources.html">Resources</a>
-</li>
+    <div class="collapse navbar-collapse" id="navbarNav">
 
-          <li>
-            <a href="contact.html">Contact</a>
-      </li>
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
 
-                        <li>
-            <a href="feedback.html">Feedback</a>
-     </li>
-   </ul>
- </div>
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Services
+          </a>
+
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="Services/rodent.html">Rodent Control</a></li>
+            <li><a class="dropdown-item" href="Services/Flying.html">Flying Pests</a></li>
+            <li><a class="dropdown-item" href="Services/crawling.html">Crawling Pests</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item"><a class="nav-link" href="booking.html">Booking</a></li>
+        <li class="nav-item"><a class="nav-link" href="resources.html">Resources</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="feedback.html">Feedback</a></li>
+
+        <li class="nav-item ms-lg-3">
+          <a class="btn btn-success px-4 rounded-pill" href="booking.html">Book Now</a>
+        </li>
+
+      </ul>
+    </div>
+
+  </div>
 </nav>
-    </header>
+</header>
 <main>
     <!-- main content -->
     <section class="Resources">
-      <div>
-        <h1>Resources</h1>
-        <p>Find helpful information, tips and guides on pest prevention, identification and control. Our resources cover common pests, DIY solutions and when to call a professional.</p>
-        <a href="booking.html">Book an Inspection</a>
-       </div>
-       <img src="Images/Resources.webp" alt="resources">
+      
+        <img src="Images/Resources.webp" alt="resources">
+
+        <div class="resource-content">
+            <h1>Resources</h1>
+            <p>Find helpful information, tips and guides on pest prevention, identification and control. Our resources cover common pests, DIY solutions and when to call a professional.</p>
+            <a href="booking.html">Book an Inspection</a>
+        </div>
+
     </section>
-    <section class="Resource intro">
-    <h2>Purpose</h2>
-    <p>Welcome to our Resources section, your trusted source for professional insights, practical guidance, and industry expertise in pest management. Here, you will find carefully curated information designed to help you identify potential pest issues, implement effective prevention strategies, and make informed decisions regarding treatment solutions. Our goal is to equip you with reliable knowledge that supports a safer, healthier, and pest-free environment.</p>
-</section>
-  <div class="Resource tips">
-         <h2 class="resource-title" >Tips</h2>
-          <ul class="resource-grid" role="list">
-        <li>
-          <article class="resource-card">
-            <h3>Manage Waste Properly</h3>
-            <figure>
-                <img src="Images/garbage waste.jpeg" alt="Garbage Waste">
-             </figure>
-            <p>Dispose of garbage regularly and ensure bins are tightly covered to avoid attracting pests</p>
-            <p>Maintain disciplined waste management practices, including regular disposal and the use of sealed bins to remove potential food sources.</p>
-        </li>
- 
-        <li>
-            <h3>Implement Preventative Treatment Plans</h3>
-<figure>
-                <img src="Images/regular spraying.jpeg" alt="Preventative Treatment">
-             </figure>
-            <p>Adopt a proactive pest management plan, including scheduled barrier treatments, to prevent infestations before they establish.</p>
-            <p>Implement a proactive pest management strategy that includes regular inspections and scheduled barrier treatments to prevent infestations before they can establish themselves.</p>
-          </article>
-        </li>
-      </ul>
-    </div>
-</figure>
-            
-        <li>
-            <h3>Maintain Clean Surroundings</h3>
-            <figure>
-                <img src="Images/clean surface.webp" alt="Clean Surroundings">
-             </figure>            
-             <p>Keep indoor and outdoor areas clean, remove clutter, and trim vegetation to reduce hiding places.</p>
-            <p>Ensure consistent environmental sanitation by reducing clutter, trimming vegetation, and eliminating debris that can serve as nesting or breeding sites.</p>
-          </article>
-        </li>
-      </ul>
-    </div>
-<section class="Environment">
-<h2>Environmental Responsibility</h2>
-<p>Environmental responsibility, health protection, and safety compliance are fundamental to effective pest management. All treatments and procedures should be carried out using approved methods and products, applied in strict accordance with industry regulations and best practices. This includes minimizing environmental impact through targeted application techniques, responsible chemical handling, and the use of integrated pest management (IPM) strategies that prioritize prevention and long-term control over excessive chemical reliance.<br>
-Protecting the well-being of occupants, staff, and surrounding communities remains a top priority throughout every stage of service delivery. Clear safety protocols, proper risk assessments, and client guidance before and after treatment ensure that all interventions are conducted safely and efficiently. By maintaining high standards of hygiene, regulatory compliance, and environmental stewardship, pest control services can deliver reliable results while safeguarding both people and the environment.</p>
-</section>
+
+    <!-- PURPOSE -->
+    <section class="Resource-intro">
+        <h2>Purpose</h2>
+        <p>Welcome to our Resources section, your trusted source for professional insights, practical guidance, and industry expertise in pest management. Here, you will find carefully curated information designed to help you identify potential pest issues, implement effective prevention strategies, and make informed decisions regarding treatment solutions. Our goal is to equip you with reliable knowledge that supports a safer, healthier, and pest-free environment.</p>
+    </section>
+
+    <!-- TIPS -->
+    <section class="Resource-tips">
+
+        <h2 class="resource-title">Tips</h2>
+
+        <ul class="resource-grid">
+
+            <li>
+                <article class="resource-card">
+                    <h3>Manage Waste Properly</h3>
+                    <img src="Images/garbage waste.jpeg" alt="Garbage Waste">
+                    <p>Dispose of garbage regularly and ensure bins are tightly covered to avoid attracting pests</p>
+                    <p>Use sealed bins to prevent pests.</p>
+                </article>
+            </li>
+
+            <li>
+                <article class="resource-card">
+                    <h3>Implement Preventative Treatment Plans</h3>
+                    <img src="Images/regular spraying.jpeg" alt="Spraying">
+                    <p>Adopt scheduled pest control treatments.</p>
+                    <p>Prevents infestations before they grow.</p>
+                </article>
+            </li>
+
+            <li>
+                <article class="resource-card">
+                    <h3>Maintain Clean Surroundings</h3>
+                    <img src="Images/clean surface.webp" alt="Clean surroundings">
+                    <p>Remove clutter and food sources.</p>
+                    <p>Keep environment clean and safe.</p>
+                </article>
+            </li>
+
+        </ul>
+
+    </section>
+
+    <!-- ENVIRONMENT -->
+    <section class="Environment">
+        <h2>Environmental Responsibility</h2>
+        <p>Environmental responsibility, health protection, and safety compliance are fundamental to effective pest management. All treatments and procedures should be carried out using approved methods and products, applied in strict accordance with industry regulations and best practices. This includes minimizing environmental impact through targeted application techniques, responsible chemical handling, and the use of integrated pest management (IPM) strategies that prioritize prevention and long-term control over excessive chemical reliance.<br>
+        Protecting the well-being of occupants, staff, and surrounding communities remains a top priority throughout every stage of service delivery.</p>
+    </section>
 </main>
 
 <!--footer-->
@@ -176,6 +190,6 @@ Protecting the well-being of occupants, staff, and surrounding communities remai
     </nav>
 <p>&copy;MPN Holdings. All Rights Reserved.</p>
     </footer> 
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
