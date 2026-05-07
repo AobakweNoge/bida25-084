@@ -418,6 +418,7 @@ main > figure:nth-of-type(2) img {
     width: 110px;
     height: auto;
     object-fit: contain;
+
 }
 
 /* SOCIAL LINKS */
@@ -511,4 +512,569 @@ main > figure:nth-of-type(2) img {
     border-top: 1px solid rgba(255,255,255,0.1);
     padding: 20px 80px;
     margin: 0;
+}
+
+/* =========================
+   ABOUT HERO SECTION
+========================= */
+
+.About{
+    position: relative;
+    min-height: 75vh;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    padding:120px 5%;
+
+    overflow:hidden;
+    isolation:isolate;
+}
+
+/* Background image */
+.about.img{
+    position:absolute;
+    inset:0;
+
+    z-index:-2;
+
+    margin:0;
+}
+
+.about.img img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+    object-position:center;
+
+    display:block;
+}
+
+/* Dark overlay */
+.About::before{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:linear-gradient(
+        rgba(0,0,0,0.55),
+        rgba(0,0,0,0.55)
+    );
+
+    z-index:-1;
+}
+
+/* Title */
+.About h2{
+    font-size:clamp(3rem, 6vw, 5rem);
+
+    font-weight:800;
+
+    color:white;
+
+    margin-bottom:25px;
+
+    text-shadow:0 4px 20px rgba(0,0,0,0.4);
+}
+
+/* Intro text */
+.About p{
+    max-width:850px;
+
+    font-size:1.15rem;
+
+    line-height:1.9;
+
+    color:rgba(255,255,255,0.92);
+}
+
+/* =========================
+   COMPANY BRIEF
+========================= */
+
+.Company.brief{
+    padding:100px 8%;
+
+    background:#ffffff;
+}
+
+.Company.brief p{
+    max-width:1200px;
+
+    margin:auto;
+
+    font-size:1.05rem;
+
+    line-height:2;
+
+    color:#555;
+}
+
+/* =========================
+   WHO WE ARE SECTION
+========================= */
+
+.who.we.are{
+    background:var(--light);
+
+    padding:100px 8%;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:30px;
+}
+
+/* Cards */
+.who.we.are li{
+    list-style:none;
+
+    background:white;
+
+    padding:40px 30px;
+
+    border-radius:20px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+
+    transition:0.3s ease;
+
+    border-top:5px solid var(--primary);
+}
+
+.who.we.are li:hover{
+    transform:translateY(-10px);
+}
+
+/* Card titles */
+.who.we.are h3{
+    font-size:1.4rem;
+
+    color:var(--primary);
+
+    margin-bottom:18px;
+}
+
+/* Card text */
+.who.we.are p{
+    color:#666;
+
+    line-height:1.9;
+}
+
+/* =========================
+   CORE VALUES SECTION
+========================= */
+
+.core.values{
+    padding:110px 8%;
+
+    background:white;
+}
+
+/* Main title */
+.core.values > h2{
+    text-align:center;
+
+    font-size:clamp(2.5rem, 5vw, 4rem);
+
+    color:var(--dark);
+
+    margin-bottom:70px;
+}
+
+/* Articles */
+.core.values article{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    align-items:center;
+
+    gap:50px;
+
+    margin-bottom:80px;
+}
+
+/* Alternate layout */
+.core.values article:nth-child(even){
+    direction:rtl;
+}
+
+.core.values article:nth-child(even) *{
+    direction:ltr;
+}
+
+/* Text */
+.core.values h3{
+    font-size:2rem;
+
+    color:var(--primary);
+
+    margin-bottom:20px;
+}
+
+.core.values p{
+    color:#666;
+
+    line-height:2;
+
+    font-size:1rem;
+}
+
+/* Images */
+.core.values figure{
+    width:100%;
+
+    height:420px;
+
+    overflow:hidden;
+
+    border-radius:24px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,0.12);
+}
+
+.core.values figure img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transition:0.5s ease;
+}
+
+/* Zoom hover */
+.core.values figure:hover img{
+    transform:scale(1.08);
+}
+
+
+/*Rodent pest*/
+
+.Service{
+    position:relative;
+    width:100%;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    padding:120px 8%;
+    overflow:hidden;
+}
+
+/* BACKGROUND IMAGE */
+.Service > img{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    z-index:1;
+}
+
+/* DARK OVERLAY */
+.Service::after{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.55);
+    z-index:2;
+}
+
+/* TEXT CONTENT */
+.Service > div{
+    position:relative;
+    z-index:3;
+    max-width:750px;
+    color:white;
+}
+
+/* HEADING */
+.Service h1{
+    font-size:clamp(3rem, 7vw, 6rem);
+    line-height:1;
+    font-weight:800;
+    margin-bottom:30px;
+    color:white;
+}
+
+/* PARAGRAPH */
+.Service p{
+    font-size:1.1rem;
+    line-height:2;
+    color:rgba(255,255,255,0.9);
+    margin-bottom:40px;
+}
+
+/* BUTTON */
+.Service a{
+    display:inline-block;
+    padding:15px 32px;
+    background:var(--primary);
+    color:white;
+    border-radius:50px;
+    font-weight:600;
+    transition:0.3s ease;
+}
+
+.Service a:hover{
+    background:var(--secondary);
+    transform:translateY(-3px);
+}
+
+
+.Rodent-pest-control {
+  max-width: 1100px;
+  margin: auto;
+  padding: 60px 20px;
+}
+
+.Rodent-pest-control h2 {
+  text-align: left;
+  margin-bottom: 20px;
+  color: #1f3d2b;
+}
+
+.Rodent-pest-control p {
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+/* KEY FIX: turn section into flex container for better control */
+.Rodent-pest-control {
+  display: flex;
+  flex-direction: column;
+}
+
+/* wrap ONLY paragraph flow after first paragraph + image */
+.Rodent-pest-control img {
+  width: 320px;
+  max-width: 40%;
+  height: auto;
+
+  border-radius: 10px;
+  object-fit: cover;
+
+  /* IMPORTANT: remove float */
+  float: none;
+}
+
+/* Create a pseudo layout for 2nd paragraph + image */
+.Rodent-pest-control p:nth-of-type(2) {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+/* Move image visually inside second paragraph row */
+.Rodent-pest-control img {
+  order: -1;
+  margin: 0;
+}
+
+/* Make sure text fills space */
+.Rodent-pest-control p:nth-of-type(2) {
+  flex: 1;
+}
+
+/* Clear spacing for other paragraphs */
+.Rodent-pest-control p:nth-of-type(1),
+.Rodent-pest-control p:nth-of-type(3) {
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .Rodent-pest-control p:nth-of-type(2) {
+    flex-direction: column;
+  }
+
+  .Rodent-pest-control img {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+
+section[class="treatment"]{
+    background: var(--greenish);
+}
+
+.treatment {
+  background: var(--light);
+  padding: 60px 20px;
+
+  /* IMPORTANT: allow full width background */
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Optional: keep content centered but not limiting background */
+.treatment > h2,
+.treatment > p,
+.treatment ul {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Heading */
+.treatment h2 {
+  text-align: left;
+  margin-bottom: 10px;
+  color: var(--light);
+}
+
+/* Intro text */
+.treatment p {
+  text-align: center;
+  margin-bottom: 30px;
+  color: var(--light);
+}
+
+/* List reset */
+.treatment ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+}
+
+/* Each treatment block */
+.treatment li {
+  margin-bottom: 30px;
+}
+
+/* Card layout */
+.treatment article {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  padding: 20px;
+  border-radius: 12px;
+  background: var(--greenish);
+
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+/* Text */
+.treatment article h3 {
+  margin-top: 0;
+  color: var(--greenish);
+}
+
+.treatment article p {
+  text-align: left;
+  margin: 8px 0;
+  color: var(--light);
+}
+
+/* Image */
+.treatment article img {
+  width: 280px;
+  max-width: 40%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.Rodent-signs {
+  background: var(--light);
+  padding: 60px 20px;
+  width: 100%;
+}
+
+.Rodent-signs h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: var(--dark);
+}
+
+/* Grid Layout */
+.signs-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+
+  max-width: 1200px;
+}
+
+/* Make list items stretch equally */
+.signs-grid li {
+  display: flex;
+}
+
+/* Card Styling */
+.sign-card {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  height: 100%;
+
+  transition: transform 0.2s ease;
+}
+
+.sign-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Uniform Image Size */
+.sign-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Heading */
+.sign-card h3 {
+  margin: 20px 15px 10px;
+  color: var(--dark);
+  min-height: 60px; /* keeps titles aligned */
+}
+
+/* Paragraph */
+.sign-card p {
+  margin: 0 15px 20px;
+  color: #444;
+  line-height: 1.6;
+
+  flex-grow: 1; /* equal card heights */
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .signs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .signs-grid {
+    grid-template-columns: 1fr;
+  }
 }
