@@ -665,6 +665,7 @@ main > figure:nth-of-type(2) img {
     font-weight:800;
     margin-bottom:30px;
     color:white;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.4)
 }
 
 
@@ -1037,17 +1038,16 @@ section[class="treatment"]{
 }
 
 .booking h1 {
-  width: 100%;
+    width: 100%;
   margin: 0;
-
   background: linear-gradient(135deg, #2f6f4e, #4caf7d);
   color: white;
-
   text-align: center;
   padding: 50px 20px;
-
-  font-size: 2.6rem;
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 800;
   letter-spacing: 1px;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.4);
 }
 
 .booking p {
@@ -1176,8 +1176,10 @@ section[class="treatment"]{
 }
 
 .resource-content h1 {
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    margin-bottom: 20px;
+    font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 800;
+  margin-bottom: 20px;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.4);
 }
 
 .resource-content p {
@@ -1398,9 +1400,15 @@ main > h2 {
   top: 160px;
   left: 50%;
   transform: translateX(-50%);
-
   z-index: 2;
   width: 100%;
+  text-align: center;
+  color: white;
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 800;
+  padding: 0;
+  margin: 0;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.4);
 }
 
 main > img {
@@ -1543,8 +1551,10 @@ iframe {
 
 .Feedback h1 {
   color: white;
-  font-size: 3rem;
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 800;
   margin: 0;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.4);
 }
 
 .Feedback p {
@@ -1793,6 +1803,10 @@ iframe {
         margin-bottom: 60px;
     }
 
+    .core.values article:nth-of-type(3) {
+        grid-template-columns: 1fr;
+    }
+
     .core.values article:nth-of-type(2) {
         direction: ltr;
     }
@@ -1871,7 +1885,7 @@ iframe {
         width: 70px;
     }
 
-    /* HERO / INTRO */
+    /*INTRO */
     main figure:first-of-type {
         height: 100svh;
     }
@@ -1882,6 +1896,10 @@ iframe {
             rgba(255,255,255,0.92) 50%,
             rgba(255,255,255,0.3) 100%
         );
+    }
+
+    .core.values article:nth-of-type(3) {
+        grid-template-columns: 1fr;
     }
 
     .intro {
@@ -2141,8 +2159,8 @@ iframe {
     }
 
     .feedback-section {
-        padding: 40px 5%;
-        margin-top: 20px;
+       padding: 40px 5%;
+  margin-top: 100px;
     }
 
     .feedback-form {
@@ -2177,7 +2195,11 @@ iframe {
 /* SMALL MOBILE (<=480px) */
 @media (max-width: 480px) {
 
-    /* HERO */
+   .booking h1  { font-size: 1.7rem; }
+
+   main > h2    { font-size: 1.6rem; top: 100px; }
+.Feedback h1 { font-size: 1.7rem; }
+.feedback-section { margin-top: 80px; }
     .intro h1 {
         font-size: 2rem;
     }
