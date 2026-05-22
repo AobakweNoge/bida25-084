@@ -111,6 +111,10 @@ main figure:first-of-type{
     height:100vh;
     overflow:hidden;
     position:relative;
+    display:block;
+    margin:0;
+    padding:0;
+    line-height:0;
 }
 
 main figure:first-of-type img{
@@ -189,7 +193,7 @@ main > figure:nth-of-type(2),
     width: 50%;
 }
 
-/* MAIN LAYOUT */
+/* Why Us */
 main {
     display: flex;
     flex-wrap: wrap;
@@ -198,9 +202,9 @@ main {
 
 
 main > figure:nth-of-type(2) {
-    order: 1;
-    flex: 1 1 50%;
     display: flex;
+    width: 50%;
+    float: left;
     overflow: hidden;
 }
 
@@ -222,6 +226,8 @@ main > figure:nth-of-type(2) img {
     gap: 28px;
     padding: 80px 80px 80px 60px;
     background: var(--white);
+    float: left;
+    width: 50%;
 }
 
 .why-us-content h2 {
@@ -1666,10 +1672,14 @@ iframe {
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
-
 .reviews {
   padding: 60px 8%;
   background: var(--secondary);
+  width: 100%;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
 }
 
 .reviews h2 {
