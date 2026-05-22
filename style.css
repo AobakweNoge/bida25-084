@@ -1689,12 +1689,6 @@ iframe {
   font-size: 2rem;
 }
 
-/* GRID LAYOUT */
-.reviews {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-}
 
 /* Keep heading full width */
 .reviews h2 {
